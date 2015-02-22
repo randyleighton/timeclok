@@ -1,7 +1,8 @@
 class TimecardsController < ApplicationController
   before_filter :find_timecard, except: [:index,:new,:create]
-  def index
 
+  def index
+    @timecards = Timecard.all
   end
 
   def new
@@ -24,9 +25,17 @@ class TimecardsController < ApplicationController
   end
 
   def update
+    @timecard = @timecard.update(timecard_params)
+    if @timecard.valid?
+      redirect_to timecard_path(@timecard), notice:"Update Success."
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @timecard.destroy
+    flash["notice"]="Destroyed Successfully"
   end
 
 private
