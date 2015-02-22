@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20150221050320) do
   create_table "timecards", force: :cascade do |t|
     t.time "start_time"
     t.time "stop_time"
+    t.time "lunch_start"
+    t.time "lunch_end"
   end
 
 end
