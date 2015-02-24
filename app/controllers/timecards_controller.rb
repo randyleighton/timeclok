@@ -7,6 +7,7 @@ class TimecardsController < ApplicationController
 
   def new
     @timecard = Timecard.new
+    @day = @timecard.days.new
   end
 
   def create
