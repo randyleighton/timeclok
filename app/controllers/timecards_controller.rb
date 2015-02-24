@@ -42,7 +42,7 @@ class TimecardsController < ApplicationController
 private
   
   def timecard_params
-    params.require(:timecard).permit(:start_time, :stop_time, :lunch_start, :lunch_stop)
+    params.require(:timecard).permit(:start_time, :stop_time, :lunch_start, :lunch_stop, day_attributes:[])
   end
 
   def find_timecard
