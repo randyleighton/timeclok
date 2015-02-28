@@ -1,0 +1,10 @@
+<h1><%= @timecard.day %></h1>
+
+<p>Timecard Day details</p>
+
+<%= @day.start_time %>
+<%= @day.stop_time %>
+<%= @day.lunch_start %>
+<%= @day.lunch.stop %>
+
+<%= link_to "Update Day Details", day_path(@day) %>
