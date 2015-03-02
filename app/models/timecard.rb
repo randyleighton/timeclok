@@ -4,4 +4,6 @@ class Timecard < ActiveRecord::Base
 
   accepts_nested_attributes_for :day, :reject_if => :all_blank
 
+  scope :order_by, ->{ joins(:day).order('day.start_time ASC') }
+
 end
