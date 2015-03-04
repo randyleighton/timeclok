@@ -11,5 +11,11 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "sass_vars.scss";
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
