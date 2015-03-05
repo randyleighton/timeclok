@@ -5,6 +5,7 @@ class CreateDay < ActiveRecord::Migration
       t.time :stop_time
       t.time :lunch_start
       t.time :lunch_end
+      t.integer :timecard_id 
     end
   end
 end
