@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 root to: "home#index"
-resources :timecards
+resources :timecards do
+  resources :days
+  end
 
 end
