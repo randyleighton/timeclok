@@ -1,0 +1,51 @@
+<%= render 'layouts/errors', object: @user %>
+<%= form_for @user, url_path: users_path do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email, "Email", class: "col-sm-4 control-label" %>
+      <div class="input-group col-sm-7">
+        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw form-fa"></i></span>
+        <%= f.email_field :email, required: true, autofocus: true, :placeholder => 'email@provider.com', class: "form-control"  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name, "Full Name", class: "col-sm-4 control-label" %>
+      <div class="input-group col-sm-7">
+        <span class="input-group-addon"><i class="fa fa-user fa-fw form-fa"></i></span>
+        <%= f.text_field :name, :placeholder => 'Your full name', class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, "Password", class: "col-sm-4 control-label" %>
+      <div class="input-group col-sm-7">
+        <span class="input-group-addon"><i class="fa fa-key fa-fw form-fa"></i></span>
+        <%= f.password_field :password, required: true, :placeholder => 'Password with 8 characters', class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm Password:", class: "col-sm-4 control-label" %>
+      <div class="input-group col-sm-7">  
+        <span class="input-group-addon"><i class="fa fa-key fa-fw form-fa"></i></span>
+        <%= f.password_field :password_confirmation, required: true, :placeholder => 'Type it again to confirm', class: "form-control"  %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="offset3 col-sm-offset-4 col-sm-7">
+        <%= button_tag(type: "submit", class: "btn btn-default float-btn btn-lg btn-block", title: "Create an Account") do %>
+          <i class="fa fa-plus fa-fw"></i> Create Account
+        <% end %>
+      </div>
+    </div>
+<!--     <div class="form-group">
+      <div class="col-xs-12">
+        <h4> Already have account?
+          <%=# link_to '<i class="fa fa-sign-in fa-fw"></i> Log In'.html_safe, new_session_path(resource_name),class: "btn btn-default", title: "Log In with Existing Account" %>
+        </h4>
+      </div>
+    </div>
+ -->
+<% end %>
