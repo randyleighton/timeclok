@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'bcrypt-ruby', '~> 3.1.2', :require => 'bcrypt'
 gem 'font-awesome-rails'
 gem 'haml'
 gem 'jquery-rails'

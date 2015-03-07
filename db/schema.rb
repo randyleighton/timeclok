@@ -22,11 +22,13 @@ ActiveRecord::Schema.define(version: 20150305155748) do
     t.time    "lunch_start"
     t.time    "lunch_end"
     t.integer "timecard_id"
+    t.integer "user_id"
   end
 
   create_table "timecards", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
+    t.integer "user_id"
+    t.date    "start_date"
+    t.date    "end_date"
   end
 
   create_table "users", force: :cascade do |t|
