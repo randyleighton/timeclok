@@ -5,5 +5,6 @@ resources :users
 resources :timecards do
   resources :days
   end
+resources :sessions, only: [:new, :create, :destroy]
 
 end
