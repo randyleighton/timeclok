@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user].destroy
+    session[:user] = nil
     redirect_to root_url, notice: "Signing Out Successfully"
   end
 
