@@ -1,0 +1,25 @@
+@import "sass_vars.scss";
+
+/* ------------------
+This is for forms
+--------------------*/
+.border-form-div {
+  max-width: 540px;
+  padding: .4em .6em;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid $mercury;
+  @include rounded-corners(.4em);
+  @include shadowed-corners(rgba(0,0,0,.10));
+  h2,h4 {
+    color: $cardinal;
+    margin-left: 10px;
+  }
+  p {
+    color: $cardinal;
+  }
+  a {
+    color: $cardinal;
+    margin: 3px;
+  }
+}
