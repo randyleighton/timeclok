@@ -1,5 +1,16 @@
 @import "sass_vars.scss";
 
+/* The most used buttons bootstrap style */
+.btn-default {
+  color: $cardinal;
+  background-color: $button-pri;
+  border-color: black;
+  &:hover {
+    background-color: $cardinal !important;
+    color: white;
+  }
+}
+
 /* ------------------
 This is for forms
 --------------------*/
