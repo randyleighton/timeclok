@@ -1,5 +1,31 @@
 @import "sass_vars.scss";
 
+/*----------------------------- 
+global css entire program
+-----------------------------*/
+
+body {
+  padding-top: 55px;
+  padding-bottom: 70px;
+}
+
+a {
+  color: $cardinal;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  body { padding-top: 5px; }
+  .offset3 { padding: 0 15px; }
+  .home-p { font-size: 1.3em; }
+}
+
+
 /* The most used buttons bootstrap style */
 .btn-default {
   color: $cardinal;
@@ -10,6 +36,22 @@
     color: white;
   }
 }
+
+.float-btn {
+  color: $cardinal;
+  float: left;
+  margin: 0 .6em 0 0;
+}
+a.float-btn {
+  color: $cardinal;
+  margin-top: 0px;
+}
+
+/* This is to remove the offset padding */
+.offset3, .checkbox {
+  padding: 0px;
+}
+
 
 /* ------------------
 This is for forms
