@@ -1,24 +1,33 @@
 <div class="border-form-div">
-  <%= form_tag sessions_path do %>
-    <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email], :placeholder => "Email address" %>
+  <%= form_tag url_path: sessions_path do |f| %>
+    <div class="form-group">
+      <%= label_tag :email,"Email", class: "col-sm-3 control-label" %>
+      <div class="input-group col-sm-6">
+        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw form-fa"></i></span>
+        <%= email_field_tag :email, class: "form-control" %>
+      </div>
     </div>
-    <div class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password, nil, :placeholder => "Password" %>
+
+    <div class="form-group">
+      <%= label_tag :password, "Password",class: "col-sm-3 control-label" %>
+      <div class="input-group col-sm-6">
+        <% if :email == "test@test.com" %>
+            <%= password_field_tag :password, value: "test1234", class: "form-control" %>
+        <% else %>
+            <%= password_field_tag :password, :placeholder => 'Password with 8+ characters', class: "form-control" %>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-offset-3 col-sm-9 checkbox ">
+        <%= check_box_tag :remember_me, :class=>"checkbox" %>
+      </div>
     </div>
-    <!-- We will get to this in a while -->
-    <div class="field">
-      <%= label_tag :remember_me ,:class => "checkbox vsmall" do %>
-      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-      Remember me
-      <% end %>
-    </div>
-    <!-- end block -->
-    <br>
-    <div class="actions">
-      <%= submit_tag :sign_in, :value => "Sign in" %>
+
+    <div class="form-group">
+      <div class="offset3 col-sm-offset-3 col-sm-6">
+        <%= button_tag(type: "submit", class: "btn btn-default float-btn btn-lg btn-block", title: "Log In") do %>
+          <i class="fa fa-sign-in fa-fw"></i> Log In
+        <% end %>
+      </div>
     </div>
     <br>
     <div class="messages">
