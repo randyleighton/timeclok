@@ -13,6 +13,8 @@ gem "simple_form"
 gem 'turbolinks'
 gem 'tzinfo-data'
 gem 'uglifier'
+gem 'httparty'
+gem 'cocoon'
 
 
 group :development do
