@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
-gem 'bcrypt-ruby', '~> 3.1.2', :require => 'bcrypt'
 gem 'font-awesome-rails'
 gem 'haml'
 gem 'jquery-rails'
@@ -15,7 +14,7 @@ gem 'tzinfo-data'
 gem 'uglifier'
 gem 'httparty'
 gem 'cocoon'
-gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem 'bcrypt', '~> 3.1.5', require: "bcrypt"
 
 
 group :development do
