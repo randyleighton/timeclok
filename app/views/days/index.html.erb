@@ -1,5 +1,7 @@
 <h1>Timecards</h1>
 
-<% @timecards.each do |timecard| %>
-  <%= link_to "<p><strong>Timecard Start Date:</strong></p> #{timecard.start_date}".html_safe, timecard_path(timecard) %>
+<p><strong>Timecard Start Date: </strong><%= @timecard.start_date %></p>
+
+<% @days.each do |day| %>
+  <%= link_to "<p><strong>Timecard Start Date:</strong></p> #{day.start_time}".html_safe, day__path(day) %>
 <% end %>
