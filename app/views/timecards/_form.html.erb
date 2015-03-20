@@ -1,14 +1,15 @@
 <%= render 'layouts/errors', object: @timecard %>
 
 <%= form_for(@timecard, html: { class: 'form-horizontal' }) do |f| %>
+<div class="form-group">
+  <%= f.label :start_date, "Start Date", class: "control-label" %>
+  <%= f.date_field :start_date, class:"form-control" %>
+</div>
 
-<%= f.label :start_date, "Start Date", class: "control-label" %>
-<%= f.date_field :start_date, class:"form-control" %>
-
+<div class="form-group">
 <%= f.label :end_date, "End Date", class: "control-label" %>
 <%= f.date_field :end_date, class:"form-control" %>
-
-
+</div>
 
   <div class="form-group">
     <div class="offset3 col-sm-offset-3 col-sm-6">

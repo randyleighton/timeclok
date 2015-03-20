@@ -3,6 +3,6 @@
 <%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-primary" %>
 
 <% @timecards.each do |timecard| %>
-
+  <p><strong>Timecard Starting: </strong><%= link_to "#{timecard.start_date}", timecard_path(timecard) %> </p> 
 <% end %>
 
