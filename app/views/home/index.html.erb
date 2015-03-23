@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="jumbotron">
+  <div class="jumbotron jumbo">
     <h1>Welcome to Timeclok</h1>
     <% if session[:user] %>
       <h3>Hello <%= (user = User.find(session[:user])).name %></h3>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="row2">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6 clearfix">
       <%= link_to "Manage Timecards", timecards_path, class:"btn btn-primary", title: "View and Manage all timecards" %>
     </div>
   </div>
