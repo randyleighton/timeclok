@@ -19,16 +19,21 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
 def self.authenticate_user(email, password)
-  user = find_by_email(email)
-  if user && user.authenticate(password)
-    user
+  user = User.where(email: email).first
+  if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+  user
   else
-    nil
+  nil
   end
+  # user = find_by_email(email)
+  # if user && user.authenticate(password)
+  #   user
+  # else
+  #   nil
+  # end
 end
 
 def encrypt_password
-  binding.pry
   self.password_salt = BCrypt::Engine.generate_salt
   self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
 end
