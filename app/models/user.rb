@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   # # validates :password, length: { minimum: 8 }
   validates_confirmation_of :password
 
-def self.authenticate_user(email, password)
+def self.authenticate(email, password)
   user = User.where(email: email).first
   if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
   user
