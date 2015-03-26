@@ -1,6 +1,9 @@
 <div class="container-fluid">
   <div class="jumbotron jumbo">
-    <h1>Welcome to Timeclok</h1>
+    <h1>Welcome to Timeclok
+    <%= image_tag("time-icon.png", class:"home-time") %>
+    </h1>
+
     <% if session[:user] %>
       <h3>Hello <%= (user = User.find(session[:user])).name %></h3>
       <%= link_to "Signout", session_path(user), method: :delete %>
