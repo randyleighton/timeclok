@@ -6,10 +6,10 @@
 
     <% if session[:user] %>
       <h3>Hello <%= (user = User.find(session[:user])).name %></h3>
-      <%= link_to "Signout", session_path(user), method: :delete %>
+      <%= link_to "Signout", log_out_path(user), method: :delete %>
     <% else %>
       <%= link_to "Register", new_user_path, class: "btn btn-default" %>
-      <%= link_to "Login", new_session_path, class: "btn btn-default" %>
+      <%= link_to "Login", log_in_path, class: "btn btn-default" %>
     <% end %>
     </div>
   </div>
