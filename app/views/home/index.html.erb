@@ -4,9 +4,10 @@
     <%= image_tag("time-icon.png", class:"home-time") %>
     </h1>
 
-    <% if session[:user] %>
-      <h3>Hello <%= (user = User.find(session[:user])).name %></h3>
-      <%= link_to "Signout", log_out_path(user), method: :delete %>
+    <% if session[:user_id] %>
+      <h3>Hello <%= (user = User.find(session[:user_id])).email %>
+      <%= link_to "Signout", log_out_path(user), class:"btn btn-default", method: :delete %>
+      </h3>
     <% else %>
       <%= link_to "Register", new_user_path, class: "btn btn-default" %>
       <%= link_to "Login", log_in_path, class: "btn btn-default" %>
