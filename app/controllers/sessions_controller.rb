@@ -9,7 +9,7 @@ def create
     session[:user_id] = @user.id
     redirect_to root_path, notice: "Logged in as #{@user.email}"
   else
-    redirect_to log_in_path, alert: "There was a problem logging you in."
+    redirect_to log_in_path, alert: "Name or Password is Invalid"
 end
 end
 
