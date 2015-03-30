@@ -6,7 +6,8 @@
 
     <% if current_user %>
       <h3>Hello <%= current_user.email %>
-      <%= link_to "Signout", session_path(session), class:"btn btn-default", method: :delete %>
+      <%= link_to "Logout", session_path(session), class:"btn btn-default", data: {method: :delete}, title:"Logout" %>
+
       </h3>
     <% else %>
       <%= link_to "Register", new_user_path, class: "btn btn-default" %>
