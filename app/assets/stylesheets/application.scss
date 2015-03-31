@@ -20,3 +20,10 @@
 @import "custom.css";
 @import "home.css";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
+
+.jumbotron {
+  background-color: $boot_blue !important;
+  h1 {
+    color: #fff;  
+  }
+}
