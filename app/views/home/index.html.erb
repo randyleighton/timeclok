@@ -6,8 +6,7 @@
 
     <% if current_user %>
       <h3>Hello <%= current_user.email %>
-      <%= link_to "Logout", session_path(session), class:"btn btn-default", data: {method: :delete}, title:"Logout" %>
-
+      <%= link_to "<i class='fa fa-sign-out fa-fw'></i>Logout".html_safe, session_path(session), class:"btn btn-default", data: {method: :delete}, title:"Logout" %>
       </h3>
     <% else %>
       <%= link_to '<i class="fa fa-plus fa-fw"></i> Create a New Account'.html_safe, new_user_path, class: "btn btn-default" %>
