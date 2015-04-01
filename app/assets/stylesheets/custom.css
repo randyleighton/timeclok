@@ -26,6 +26,7 @@ a {
 
 /* The most used buttons bootstrap style */
 .btn-default {
+  margin-bottom: 10px !important;
   color: $cardinal;
   background-color: $button-pri;
   border-color: black;
@@ -79,7 +80,9 @@ This is for forms
   height: 100px;
 }
 
-
+.r1-header h3 {
+    margin-top: 0px !important;
+  }
 
 
 
