@@ -2,7 +2,7 @@ class TimecardsController < ApplicationController
   before_filter :find_timecard, except: [:index,:new,:create]
 
   def index
-    @timecards = Timecard.all
+    @timecards = Timecard.all.where(user_id:current_user.id)
   end
 
   def new
