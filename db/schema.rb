@@ -17,18 +17,23 @@ ActiveRecord::Schema.define(version: 20150305155748) do
   enable_extension "plpgsql"
 
   create_table "days", force: :cascade do |t|
-    t.time    "start_time"
-    t.time    "stop_time"
-    t.time    "lunch_start"
-    t.time    "lunch_end"
-    t.integer "timecard_id"
-    t.integer "user_id"
+    t.date     "datetime"
+    t.time     "start_time"
+    t.time     "stop_time"
+    t.time     "lunch_start"
+    t.time     "lunch_end"
+    t.integer  "timecard_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "timecards", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
