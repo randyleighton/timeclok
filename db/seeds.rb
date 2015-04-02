@@ -19,7 +19,7 @@ print "Seeding Database".magenta
 user1 = User.create(email: "randyleighton@yahoo.com", name:"Randy", password: "test1234")
 print "..."
 binding.pry
-timecard = Timecard.create(user_id: user1.id, start_date: DateTime.now, end_date: start_date + 6)
+timecard = Timecard.create(user_id: user1.id, start_date: "03/31/2015", end_date: start_date + 6)
 print "..."
 day1 = Day.create(user_id: user1.id, timecard_id: timecard.id, start_time: Time.now - 7, 
                   stop_time: Time.now + 1)

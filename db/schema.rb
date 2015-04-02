@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20150305155748) do
   end
 
   create_table "timecards", force: :cascade do |t|
-    t.integer "user_id"
-    t.date    "start_date"
-    t.date    "end_date"
+    t.integer  "user_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "users", force: :cascade do |t|
