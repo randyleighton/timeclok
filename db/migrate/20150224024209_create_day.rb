@@ -1,7 +1,7 @@
 class CreateDay < ActiveRecord::Migration
   def change
     create_table :days do |t|
-      t.date :date
+      t.date :work_date
       t.time :start_time
       t.time :stop_time
       t.time :lunch_start
