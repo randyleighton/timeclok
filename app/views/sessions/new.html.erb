@@ -23,12 +23,12 @@
     </div>
 
     <div class="form-group">
-      <div class="offset3 col-sm-offset-3 col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6 offset3">
         <p>
-          <%= button_tag(type: "submit", class: "btn btn-default float-btn btn-lg", title: "Log In") do %>
+          <%= button_tag(type: "submit", class: "btn btn-default btn-lg", title: "Log In") do %>
             <i class="fa fa-sign-in fa-fw"></i> Log In
           <% end %>
-          <%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, :back, class: "btn btn-default btn-lg float-btn",title:"Cancel" %>
+          <%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, :back, class: "btn btn-default btn-lg",title:"Cancel" %>
         </p>
         <p><%= link_to '<i class="fa fa-plus fa-fw"></i> Create a New Account'.html_safe, new_user_path, class: "btn btn-default" %></p>
       </div>

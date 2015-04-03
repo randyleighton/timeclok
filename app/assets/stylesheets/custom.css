@@ -48,7 +48,7 @@ a.float-btn {
 
 /* This is to remove the offset padding */
 .offset3, .checkbox {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 
