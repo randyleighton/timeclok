@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150305155748) do
   enable_extension "plpgsql"
 
   create_table "days", force: :cascade do |t|
-    t.date     "datetime"
+    t.date     "date"
     t.time     "start_time"
     t.time     "stop_time"
     t.time     "lunch_start"
