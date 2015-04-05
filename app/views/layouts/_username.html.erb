@@ -1,5 +1,5 @@
 <% if current_user.name %>
-  <%= current_user.name %>
+  <span class="username-style"><%= current_user.name %></span>
 <% else %>
-  <%= current_user.email %>
-  <% end %>
+  <span class="username-style"><%= current_user.email %></span>
+<% end %>
