@@ -14,6 +14,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user = @user.update(user_params)
+    if @user.valid?
+      render root_url, notice: "Updated Successfully"
+    else
+      render 'edit', notice: "Failed to Update"
+    end
+  end
+
+
+
 private
 
   def user_params
