@@ -6,7 +6,7 @@
     </h1>
 
     <% if current_user %>
-      <h3>Hello <%= link_to "#{users_name}", edit_user_path(current_user) %>
+      <h3>Hello <%= link_to "#{users_name}", edit_user_path(current_user), class: "edit-user" %>
       <%= link_to "<i class='fa fa-sign-out fa-fw'></i>Logout".html_safe, session_path(session), class:"btn btn-default", data: {method: :delete}, title:"Logout" %>
       </h3>
     <% else %>
