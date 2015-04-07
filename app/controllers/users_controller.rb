@@ -20,9 +20,8 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user = @user.update(user_params)
-    if @user.valid?
-      render root_url, notice: "Updated Successfully"
+    if @user.update(user_params)
+      redirect_to root_url, notice: "Updated Successfully"
     else
       render 'edit', notice: "Failed to Update"
     end

@@ -36,6 +36,7 @@ class TimecardsController < ApplicationController
 
   def destroy
     @timecard.destroy
+    redirect_to root_url
     flash["notice"]="Destroyed Successfully"
   end
 
