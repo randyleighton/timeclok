@@ -1,6 +1,7 @@
 <%= render 'layouts/errors', object: @timecard %>
 
 <%= form_for(@timecard, html: { class: 'form-horizontal' }) do |f| %>
+<% f.hidden_field :user_id, value: current_user.id %>
 <div class="form-group">
   <%= f.label :start_date, "Start Date", class: "control-label" %>
   <%= f.date_field :start_date, class:"form-control" %>
