@@ -24,17 +24,9 @@
       <%= f.phone_field :phone, :placeholder => 'ie. 123-45-6789', class: "form-control"  %>
     </div>
   </div>
+<% binding.pry %>
+  <%= render 'layouts/password', f:f %>
 
-  <% if current_user != nil %>
-    <div class="col-sm-offset-4">
-      <%= button_tag("<i id='iconChange'class='fa fa-list-alt'> Update the Password</i>".html_safe,id:"update-password-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to update the password') %>
-    </div>
-    <div id="view-password-fields">
-    <%= render 'layouts/password', f:f %>
-    </div>
-  <% elsif current_user == nil %>
-      <%= render 'layouts/password', f:f %>
-  <% end %>
 
   <div class="form-group">
     <div class="offset3 col-sm-offset-4 col-sm-9">
