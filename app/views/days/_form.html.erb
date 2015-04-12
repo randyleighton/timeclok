@@ -1,6 +1,7 @@
 <%= render 'layouts/errors', object: @day %>
 
 <%= simple_form_for(@day, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.label :start_time, "Start Time", class: "control-label" %>
   <%= f.time_field :start_time, class: "form-control" %>

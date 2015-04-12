@@ -39,7 +39,7 @@ class DaysController < ApplicationController
 private
 
   def day_params
-    params.require(:day).permit(:start_time, :stop_time, :lunch_start, :lunch_stop)
+    params.require(:day).permit(:start_time, :stop_time, :lunch_start, :lunch_stop, :user_id)
   end
 
   def find_day
