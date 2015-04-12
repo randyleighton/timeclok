@@ -3,7 +3,6 @@
 .username-style {
   color: $boot_blue;
 }
-
 #view-password-fields {
   display: none;
 }

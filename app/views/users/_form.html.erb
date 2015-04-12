@@ -25,12 +25,18 @@
     </div>
   </div>
 
-  <div class="col-sm-offset-4">
-      <%= button_tag("<i id='iconChange'class='fa fa-list-alt'> Update the Password</i>".html_safe,id:"update-password-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to update the password') %>
-  </div>
-  <div id="view-password-fields">
+  <% binding.pry %>
+  <% if !current_user %>
     <%= render 'layouts/password', f:f %>
-  </div>
+  <% else %>
+    <div class="col-sm-offset-4">
+      <%= button_tag("<i id='iconChange'class='fa fa-list-alt'> Update the Password</i>".html_safe,id:"update-password-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to update the password') %>
+    </div>
+    <div id="view-password-fields">
+      <%= render 'layouts/password', f:f %>
+    </div>
+  <% end %>
+
 
   <div class="form-group">
     <div class="offset3 col-sm-offset-4 col-sm-9">
