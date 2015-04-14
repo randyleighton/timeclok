@@ -1,6 +1,9 @@
-<h1>Timecard</h1>
+<div class="container-fluid">
 
-<p><strong>Start Date:</strong><%= @timecard.start_date %></p>
-<p><strong>End Date:</strong><%= @timecard.end_date %></p>
+  <div class="jumbotron jumbo">
+    <h2>Timecard</h2>
+    <%= link_to "View All Timecards", timecards_path, class: "btn btn-default" %>
+  </div>
+<p><strong>Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %></p>
+<p><strong>End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
 
-<%= link_to "View All Timecards", timecards_path, class: "btn btn-default btn-lg" %>
