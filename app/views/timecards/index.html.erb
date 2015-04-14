@@ -1,8 +1,14 @@
-<h1>Timecards </h1>
-<p>for <%= render 'layouts/username' %></p>
-<%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-primary" %>
+<div class="container-fluid">
 
-<% @timecards.each do |timecard| %>
-  <p><strong>Timecard Starting: </strong><%= link_to "#{timecard.start_date}", timecard_path(timecard) %> </p> 
-<% end %>
+  <div class="jumbotron jumbo">
+    <h2>Timecards
+    <%= image_tag("time-icon.png", class:"home-time") %>
+    </h1>
+  <p><%= render 'layouts/username' %></p>
+  <%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-default" %>
+</div>
 
+
+  <% @timecards.each do |timecard| %>
+    <p><strong>Timecard Starting: </strong><%= link_to "#{timecard.start_date}", timecard_path(timecard) %> </p> 
+  <% end %>
