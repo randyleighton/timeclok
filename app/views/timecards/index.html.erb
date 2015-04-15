@@ -3,12 +3,14 @@
   <div class="jumbotron jumbo">
     <h2>Timecards
     <%= image_tag("time-icon.png", class:"home-time") %>
-    </h1>
+    </h2>
   <p>Account: <%= render 'layouts/username' %></p>
   <%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-default" %>
+
+  <div class="row1">
+    <% @timecards.each do |timecard| %>
+      <p><strong><i class="fa fa-clock-o"></i> Timecard Date: </strong><%= link_to "#{timecard.start_date.strftime("%m/%d/%Y")} - #{timecard.end_date.strftime("%m/%d/%Y")}", timecard_path(timecard) %> </p> 
+    <% end %>
+  </div>
+
 </div>
-
-
-  <% @timecards.each do |timecard| %>
-    <p><strong><i class="fa fa-clock-o"></i> Timecard Date: </strong><%= link_to "#{timecard.start_date.strftime("%m/%d/%Y")} - #{timecard.end_date.strftime("%m/%d/%Y")}", timecard_path(timecard) %> </p> 
-  <% end %>
