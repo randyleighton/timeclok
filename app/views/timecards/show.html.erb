@@ -15,6 +15,9 @@
     <h4>Days</h4>
     <% @timecard.days.each do |day| %>
       <p><strong>Day Worked: </strong><%= day.work_date %></p>
+      <p><strong>Start Time: </strong><%= day.start_time %></p>
+      <p><strong>Stop Time: </strong><%= day.stop_time %></p>
+      <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_stop %></p>
     <% end %>
   </div>
 

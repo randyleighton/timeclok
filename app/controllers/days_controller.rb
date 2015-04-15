@@ -1,6 +1,7 @@
 class DaysController < ApplicationController
   before_filter :find_day, except:[:index,:new,:create]
   before_filter :find_timecard
+  
   def index
     @days = Day.all
   end
