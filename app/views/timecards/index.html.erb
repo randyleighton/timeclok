@@ -6,6 +6,7 @@
     </h2>
   <p>Account: <%= render 'layouts/username' %></p>
   <%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-default" %>
+  </div>
 
   <div class="row1">
     <% @timecards.each do |timecard| %>
