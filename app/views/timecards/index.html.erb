@@ -5,7 +5,8 @@
     <%= image_tag("time-icon.png", class:"home-time") %>
     </h2>
   <p>Account: <%= render 'layouts/username' %></p>
-  <%= link_to "Create New Timecard", new_timecard_path, class:"btn btn-default" %>
+  <%= link_to '<i class="fa fa-plus-circle"></i> Create New Timecard'.html_safe, new_timecard_path, class:"btn btn-default" %>
+  <%= link_to '<i class=""></i> Home'.html_safe, root_url_path, class: "btn btn-default" %>
   </div>
 
   <div class="row1">
