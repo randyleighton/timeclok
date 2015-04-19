@@ -7,14 +7,14 @@
 
   <div class="row1">
     <h4>Work Week</h4>
-    <p><strong>Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %></p>
-    <p><strong>End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
+    <p><strong><i class="fa fa-clock-o"></i> Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %></p>
+    <p><strong><i class="fa fa-clock-o"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
   </div>
 
   <div class="row2">
     <h4>Days</h4>
     <% @timecard.days.each do |day| %>
-      <p><strong>Day Worked: </strong><%= day.work_date %></p>
+      <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
       <p><strong>Start Time: </strong><%= day.start_time %></p>
       <p><strong>Stop Time: </strong><%= day.stop_time %></p>
       <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_stop %></p>
