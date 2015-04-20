@@ -31,6 +31,10 @@
     <div class="offset3 col-sm-offset-4 col-sm-9">
       <%= render 'layouts/submit', form_type: "User", object: @user, f: f %>
     </div>
-  </div>
+    <div class="offset3 col-sm-offset-4 col-sm-9">
+      <%= link_to '<i class="fa fa-sign-in fa-fw"></i> Log In'.html_safe, new_session_path, class: "btn btn-default" %>
 
+    </div>
+  </div>
+  
 <% end %>
