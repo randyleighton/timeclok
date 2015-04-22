@@ -21,4 +21,16 @@
     <% end %>
   </div>
 
+  <div class="row3">
+    <%= form_for (([@timecard, @day]), html: {class: 'form-horizontal'} do |f| %>
+      <div class="form-group">
+        <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-6">
+          <span class="input-group-addon"><i class="fa fa-calendar fa-fw form-fa"></i></span>
+          <%= f.date_field :work_date, class: 'form-control' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
