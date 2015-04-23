@@ -20,6 +20,7 @@ class TimecardsController < ApplicationController
   end
 
   def show
+    @day = @timecard.days.new
   end
 
   def edit

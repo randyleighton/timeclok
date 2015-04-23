@@ -11,18 +11,8 @@
     <p><strong><i class="fa fa-clock-o"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
   </div>
 
-  <div class="row2">
-    <h4>Days</h4>
-    <% @timecard.days.each do |day| %>
-      <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
-      <p><strong>Start Time: </strong><%= day.start_time %></p>
-      <p><strong>Stop Time: </strong><%= day.stop_time %></p>
-      <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_stop %></p>
-    <% end %>
-  </div>
-
   <div class="row3">
-    <%= form_for (([@timecard, @day]), html: {class: 'form-horizontal'} do |f| %>
+    <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
       <div class="form-group">
         <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
         <div class="input-group col-xs-8 col-sm-6">
@@ -30,6 +20,16 @@
           <%= f.date_field :work_date, class: 'form-control' %>
         </div>
       </div>
+    <% end %>
+  </div>
+
+  <div class="row2">
+    <h4>Days</h4>
+    <% @timecard.days.each do |day| %>
+      <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
+      <p><strong>Start Time: </strong><%= day.start_time %></p>
+      <p><strong>Stop Time: </strong><%= day.stop_time %></p>
+      <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_stop %></p>
     <% end %>
   </div>
 
