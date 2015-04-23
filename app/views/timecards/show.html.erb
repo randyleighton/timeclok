@@ -1,32 +1,19 @@
 <div class="container-fluid">
 
   <div class="jumbotron jumbo">
-    <h2>Timecard Detail</h2>
+    <h2 class="row-head">Timecard Detail</h2>
     <%= link_to "<i class='fa fa-archive'></i> View All Timecards".html_safe, timecards_path, class: "btn btn-default" %>
   </div>
 
   <div class="row1">
-    <h4>Work Week</h4>
+    <h4 class="row-head">Work Week</h4>
     <p><strong><i class="fa fa-clock-o"></i> Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %>
     &nbsp&nbsp
     <strong><i class="fa fa-clock-o"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
   </div>
 
-
-  <div class="row3">
-    <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
-      <div class="form-group">
-        <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
-        <div class="input-group col-xs-8 col-sm-6">
-          <span class="input-group-addon"><i class="fa fa-calendar fa-fw form-fa"></i></span>
-          <%= f.date_field :work_date, class: 'form-control' %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
   <div class="row2">
-    <h4>Days</h4>
+    <h4 class="row-head">Days Worked</h4>
     <% @timecard.days.each do |day| %>
       <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
       <p><strong>Start Time: </strong><%= day.start_time %></p>
@@ -34,5 +21,41 @@
       <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_end %></p>
     <% end %>
   </div>
+
+  <div class="row3">
+  <h4 class="row-head">Add a Workday</h4>
+    <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-3">
+          <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+          <%= f.date_field :work_date, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :start_time, "Start Time", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-3">
+          <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+          <%= f.date_field :start_time, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :stop_time, "Stop Time", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-3">
+          <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+          <%= f.date_field :stop_time, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="offset3 col-sm-offset-2 col-sm-3">
+          <%= render 'layouts/submit', form_type: "Day", object: @day, f: f %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+
+
 
 </div>
