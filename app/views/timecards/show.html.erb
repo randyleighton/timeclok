@@ -7,9 +7,11 @@
 
   <div class="row1">
     <h4>Work Week</h4>
-    <p><strong><i class="fa fa-clock-o"></i> Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %></p>
-    <p><strong><i class="fa fa-clock-o"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
+    <p><strong><i class="fa fa-clock-o"></i> Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %>
+    &nbsp&nbsp
+    <strong><i class="fa fa-clock-o"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
   </div>
+
 
   <div class="row3">
     <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
@@ -29,7 +31,7 @@
       <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
       <p><strong>Start Time: </strong><%= day.start_time %></p>
       <p><strong>Stop Time: </strong><%= day.stop_time %></p>
-      <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_stop %></p>
+      <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_end %></p>
     <% end %>
   </div>
 
