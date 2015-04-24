@@ -7,11 +7,12 @@ class DaysController < ApplicationController
   end
 
   def new
-    @day = Day.new
+    @day = @timecard.days.new
   end
 
   def create
-    if @day.create(day_params).valid?
+    @day = @timecard.days.new(day_params)
+    if @day.save
       redirect_to day_path(@day), notice: "Created Successfully"
     else
       render 'new', notice: "Failed to Create"
@@ -40,7 +41,7 @@ class DaysController < ApplicationController
 private
 
   def day_params
-    params.require(:day).permit(:start_time, :stop_time, :lunch_start, :lunch_stop, :user_id)
+    params.require(:day).permit(:start_time, :stop_time, :lunch_start, :lunch_stop, :user_id, timecard_attributes:[:start_date, :end_date, :user_id])
   end
 
   def find_day
