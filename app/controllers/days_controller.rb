@@ -2,18 +2,14 @@ class DaysController < ApplicationController
   before_filter :find_timecard
   before_filter :find_day, except:[:index,:new,:create]
   
-  def index
-    @days = @timecard.days.all
-  end
-
   def new
     @day = @timecard.days.new
   end
 
   def create
-    @day = @timecard.days.new(day_params)
-    if @day.save
-      redirect_to day_path(@day), notice: "Created Successfully"
+    @day = @timecard.days.create(day_params)
+    if @day.valid?
+      redirect_to timecard_path(@timecard), notice: "Created Successfully"
     else
       render 'new', notice: "Failed to Create"
     end
@@ -24,7 +20,7 @@ class DaysController < ApplicationController
 
   def update
     if @day.update(day_params).valid?
-      redirect_to day_path(@day), notice: "Updated Successfully"
+      redirect_to timecard_path(@timecard), notice: "Updated Successfully"
     else
       render 'edit', notice:"Failed to Update"
     end
