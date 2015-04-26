@@ -1,9 +1,9 @@
 class DaysController < ApplicationController
-  before_filter :find_day, except:[:index,:new,:create]
   before_filter :find_timecard
+  before_filter :find_day, except:[:index,:new,:create]
   
   def index
-    @days = Day.all
+    @days = @timecard.days.all
   end
 
   def new
@@ -41,7 +41,7 @@ class DaysController < ApplicationController
 private
 
   def day_params
-    params.require(:day).permit(:start_time, :stop_time, :lunch_start, :lunch_stop, :user_id, timecard_attributes:[:start_date, :end_date, :user_id])
+    params.require(:day).permit(:work_date, :start_time, :stop_time, :lunch_start, :lunch_end, :user_id, :timecard_id)
   end
 
   def find_day
