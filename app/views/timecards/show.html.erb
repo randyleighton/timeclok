@@ -50,11 +50,11 @@
   <div class="row2">
     <h4 class="row-head">Days Worked</h4>
     <% @timecard.days.each do |day| %>
-      <% if day != @timecard.days.last %>
-        <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date %></p>
-        <p><strong>Start Time: </strong><%= day.start_time %></p>
-        <p><strong>Stop Time: </strong><%= day.stop_time %></p>
-        <p><strong>Lunch Time: </strong><%= day.lunch_start %> to <%= day.lunch_end %></p>
+      <% if day.work_date != nil %>
+        <p><strong><i class="fa fa-clock-o"></i> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></p>
+        <p><strong>Start Time: </strong><%= day.start_time.strftime("%I:%M:%S %p") %></p>
+        <p><strong>Stop Time: </strong><%= day.stop_time.strftime("%I:%M:%S %p") %></p>
+        <p><strong>Total for Day </strong><%= (day.stop_time - day.start_time) / 3600 %> hours</p>
       <% end %>
     <% end %>
   </div>
