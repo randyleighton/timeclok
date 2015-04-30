@@ -1,10 +1,8 @@
 class Timecard < ActiveRecord::Base
 
   belongs_to :user
-  has_many :days, dependent: :destroy
+  has_many :days, ->{ order("work_date DESC") }, dependent: :destroy
 
   accepts_nested_attributes_for :days, :reject_if => :all_blank
-
-  # scope :order_by, ->{ joins(:day).order('day.start_time ASC') }
 
 end

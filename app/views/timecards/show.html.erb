@@ -39,6 +39,20 @@
         </div>
       </div>
       <div class="form-group">
+        <%= f.label :lunch_start, "Lunch Started", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-2">
+          <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+          <%= f.time_field :lunch_start, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :lunch_end, "Lunch Ended", class: "col-xs-12 col-sm-2"%>
+        <div class="input-group col-xs-8 col-sm-2">
+          <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+          <%= f.time_field :lunch_end, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
         <div class="offset3 col-sm-offset-2 col-sm-3">
           <%= render 'layouts/submit', form_type: "Day", object: @day, f: f %>
         </div>
@@ -54,7 +68,7 @@
         <p><strong><i class="fa fa-calendar"></i> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></p>
         <p><strong><i class="fa fa-clock-o fa-fw"></i> Started: </strong><%= day.start_time.strftime("%I:%M:%S %p") %>
         <strong><i class="fa fa-clock-o fa-fw"></i> Ended: </strong><%= day.stop_time.strftime("%I:%M:%S %p") %></p>
-        <p><strong><i class="fa fa-calculator fa-fw"></i>Total for Day </strong><%= (day.stop_time - day.start_time) / 3600 %> hours</p>
+        <p><strong><i class="fa fa-calculator fa-fw "></i>Total for Day </strong><%= (day.stop_time - day.start_time) / 3600 %> hours</p>
       <% end %>
     <% end %>
   </div>
