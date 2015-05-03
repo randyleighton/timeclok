@@ -13,7 +13,7 @@
   </div>
 
   <div class="row3">
-    <%= button_tag("<i id='iconChange'class='fa fa-list-alt'> Add a Workday</i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to add a workday details') %>
+    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle fa-2x'> Add a Workday</i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to add workday details') %>
     <div id="add-workday">
       <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -67,6 +67,8 @@
         <p><strong><i class="fa fa-calendar"></i> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></p>
         <p><strong><i class="fa fa-clock-o fa-fw"></i> Started: </strong><%= day.start_time.strftime("%I:%M:%S %p") %>
         <strong><i class="fa fa-clock-o fa-fw"></i> Ended: </strong><%= day.stop_time.strftime("%I:%M:%S %p") %></p>
+        <p><strong><i class="fa fa-clock-o fa-fw"></i> Lunch: </strong><%= day.lunch_start.strftime("%I:%M:%S %p") %> to <%= day.lunch_end.strftime("%I:%M:%S %p") %></p>
+
         <p><strong><i class="fa fa-calculator fa-fw "></i>Total for Day </strong><%= (day.stop_time - day.start_time) / 3600 %> hours</p>
       <% end %>
     <% end %>
