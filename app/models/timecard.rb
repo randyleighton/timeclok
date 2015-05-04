@@ -5,4 +5,7 @@ class Timecard < ActiveRecord::Base
 
   accepts_nested_attributes_for :days, :reject_if => :all_blank
 
+  validates :start_date, presence: true
+  validates :end_date, presence: true
+
 end
