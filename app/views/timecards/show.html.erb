@@ -13,7 +13,7 @@
   </div>
 
   <div class="row3">
-    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle fa-2x'> Add a Workday</i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default btn-nofloat",title:'Click if you want to to add workday details') %>
+    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle'></i> Add a Workday".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default",title:'Click if you want to to add workday details') %>
     <div id="add-workday">
       <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
