@@ -9,6 +9,7 @@ class Day < ActiveRecord::Base
   validates :lunch_start, presence: true
   validates :lunch_end, presence: true
 
+validate :verify_date
 
   def total_lunch
     (lunch_end - lunch_start) / 3600 
@@ -21,4 +22,13 @@ class Day < ActiveRecord::Base
   def total_day
     total_hours - total_lunch
   end
+
+    def verify_date
+    if self.work_date != nil && self.work_date < self.timecard.start_date
+      errors.add(:interview_date, "must be during timecard week")
+      return false
+    end
+  end
+
+
 end

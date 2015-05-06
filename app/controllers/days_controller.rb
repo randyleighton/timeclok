@@ -11,7 +11,7 @@ class DaysController < ApplicationController
     if @day.valid?
       redirect_to timecard_path(@timecard), notice: "Created Successfully"
     else
-      render 'new', notice: "Failed to Create"
+      redirect_to timecard_path(@timecard), notice: "Failed to Create"
     end
   end
 
@@ -22,7 +22,7 @@ class DaysController < ApplicationController
     if @day.update(day_params).valid?
       redirect_to timecard_path(@timecard), notice: "Updated Successfully"
     else
-      render 'edit', notice:"Failed to Update"
+      render 'edit', alert:"Failed to Update"
     end
   end
 
