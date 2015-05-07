@@ -15,49 +15,7 @@
   <div class="row3">
     <%= button_tag("<i id='iconChange'class='fa fa-plus-circle'></i> Add a Workday".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default",title:'Click if you want to to add workday details') %>
     <div id="add-workday">
-      <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <div class="form-group">
-          <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
-          <div class="input-group col-xs-8 col-sm-2">
-            <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-            <%= f.date_field :work_date, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :start_time, "Start Time", class: "col-xs-12 col-sm-2"%>
-          <div class="input-group col-xs-8 col-sm-2">
-            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
-            <%= f.time_field :start_time, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :stop_time, "Stop Time", class: "col-xs-12 col-sm-2"%>
-          <div class="input-group col-xs-8 col-sm-2">
-            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
-            <%= f.time_field :stop_time, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :lunch_start, "Lunch Started", class: "col-xs-12 col-sm-2"%>
-          <div class="input-group col-xs-8 col-sm-2">
-            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
-            <%= f.time_field :lunch_start, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :lunch_end, "Lunch Ended", class: "col-xs-12 col-sm-2"%>
-          <div class="input-group col-xs-8 col-sm-2">
-            <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
-            <%= f.time_field :lunch_end, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="offset3 col-sm-offset-2 col-sm-3">
-            <%= render 'layouts/submit', form_type: "Day", object: @day, f: f %>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'days/form' %>
     </div>
   </div>
   <div class="row2">
