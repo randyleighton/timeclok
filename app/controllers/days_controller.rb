@@ -12,7 +12,7 @@ class DaysController < ApplicationController
       redirect_to timecard_path(@timecard), notice: "Created Successfully"
     else
       @day.work_date = nil
-      render 'form', notice: "Failed to Create"
+      render timecard_path(@timecard), notice: "Failed to Create"
     end
   end
 
