@@ -8,4 +8,8 @@ $(function(){
     $('#add-workday').toggle();
   }); 
 
+  $("#view-workdays-btn").click(function() {
+    $('#view-workdays').slideToggle('slow')
+  })
+
 });
