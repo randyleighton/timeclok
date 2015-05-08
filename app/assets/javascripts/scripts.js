@@ -5,11 +5,11 @@ $(function(){
   },5000);
 
   $('#add-workday-btn').click(function(){
-    $('#add-workday').toggle();
+    $('#add-workday').slideToggle();
   }); 
 
   $("#view-workdays-btn").click(function() {
-    $('#view-workdays').slideToggle('slow')
-  })
+    $('#view-workdays').slideToggle();
+  });
 
 });
