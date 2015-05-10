@@ -5,7 +5,7 @@
 
       <table class="table table-condensed table-bordered table-striped">
         <thead>
-          <th><i class="fa fa-calendar"></i><strong> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></th>
+          <th colspan="3"><i class="fa fa-calendar"></i><strong> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></th>
         </thead>
         <tbody>
           <tr>
@@ -28,11 +28,10 @@
             <td><%= day.lunch_end.strftime("%I:%M %p") %></td>
             <td><%= day.total_lunch %> hrs</td>
           </tr>
-          <tr>
-            <td><strong><i class="fa fa-calculator fa-fw "></i>Total for Day</strong></td>
-            <td><%= day.total_day %> hrs</td>
-          </tr>
         </tbody>
+        <tfoot>
+            <th colspan="3"><strong><i class="fa fa-calculator fa-fw "></i>Total Workday </strong><%= day.total_day %> hrs</th>
+        </tfoot>
       </table>
 
     <% end %>
