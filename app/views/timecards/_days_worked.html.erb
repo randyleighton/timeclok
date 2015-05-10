@@ -1,12 +1,40 @@
-    <h4 class="row-head">Days Worked</h4>
-    <% @timecard.days.each do |day| %>
-      <% if day.work_date != nil %>
-        <p><strong><i class="fa fa-calendar"></i> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></p>
-        <p><strong><i class="fa fa-clock-o fa-fw"></i> Started: </strong><%= day.start_time.strftime("%I:%M:%S %p") %>
-        <strong><i class="fa fa-clock-o fa-fw"></i> Ended: </strong><%= day.stop_time.strftime("%I:%M:%S %p") %></p>
-        <p>Worked: <%= day.total_hours %> hrs</p>
-        <p><strong><i class="fa fa-clock-o fa-fw"></i> Lunch: </strong><%= day.lunch_start.strftime("%I:%M:%S %p") %> to <%= day.lunch_end.strftime("%I:%M:%S %p") %></p>
-        <p>Lunch: <%= day.total_lunch %> hrs</p>
-        <p><strong><i class="fa fa-calculator fa-fw "></i>Total for Day</strong> <%= day.total_day %> hrs</p>
-      <% end %>
+<div class="col-xs-12 col-sm-6">
+  <h4 class="row-head">Days Worked</h4>
+  <% @timecard.days.each do |day| %>
+    <% if day.work_date != nil %>
+
+      <table class="table table-condensed table-bordered table-striped">
+        <thead>
+          <th><i class="fa fa-calendar"></i><strong> Day Worked: </strong><%= day.work_date.strftime("%m/%d/%Y") %></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Started: </strong></td>
+            <td><strong>Ended: </strong></td>
+            <td><strong>Hours Worked: </strong></td>
+          </tr>
+          <tr>
+            <td><%= day.start_time.strftime("%I:%M %p") %></td>    
+            <td><%= day.stop_time.strftime("%I:%M %p") %></td>
+            <td><%= day.total_hours %> hrs</td>
+          </tr>
+          <tr>
+            <td><strong>Lunch Start: </strong></td>
+            <td><strong>Lunch End: </strong></td>
+            <td><strong>Lunch Total: </strong> </td>
+          </tr>
+          <tr>
+            <td><%= day.lunch_start.strftime("%I:%M %p") %></td>
+            <td><%= day.lunch_end.strftime("%I:%M %p") %></td>
+            <td><%= day.total_lunch %> hrs</td>
+          </tr>
+          <tr>
+            <td><strong><i class="fa fa-calculator fa-fw "></i>Total for Day</strong></td>
+            <td><%= day.total_day %> hrs</td>
+          </tr>
+        </tbody>
+      </table>
+
     <% end %>
+  <% end %>
+</div>
