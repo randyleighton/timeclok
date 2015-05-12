@@ -2,6 +2,8 @@ class DaysController < ApplicationController
   before_filter :find_timecard
   before_filter :find_day, except:[:index,:new,:create]
   
+  respond_to :html, :js
+
   def new
     @day = @timecard.days.new
   end
