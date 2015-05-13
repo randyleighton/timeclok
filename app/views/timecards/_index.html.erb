@@ -1,0 +1,3 @@
+<% @timecards.each do |timecard| %>
+      <p><strong><i class="fa fa-clock-o"></i> Timecard Date: </strong><%= link_to "#{timecard.start_date.strftime("%m/%d/%Y")} - #{timecard.end_date.strftime("%m/%d/%Y")}", timecard_path(timecard) %> </p> 
+<% end %>

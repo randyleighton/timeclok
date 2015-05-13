@@ -1,6 +1,8 @@
 class TimecardsController < ApplicationController
   before_filter :find_timecard, except: [:index,:new,:create]
 
+  respond_to :html, :js
+
   def index
     @timecards = Timecard.all.where(user_id:current_user.id)
   end

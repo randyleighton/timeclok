@@ -15,7 +15,7 @@ gem 'uglifier'
 gem 'httparty'
 gem 'cocoon'
 gem 'bcrypt', '~> 3.1.5', require: "bcrypt"
-
+gem 'responders', '~> 2.0'
 
 group :development do
   gem 'better_errors'

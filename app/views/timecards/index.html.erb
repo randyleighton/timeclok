@@ -5,14 +5,14 @@
     <%= image_tag("time-icon.png", class:"home-time") %>
     </h2>
   <p>Account: <%= render 'layouts/username' %></p>
-  <%= link_to '<i class="fa fa-plus-circle"></i> Create New Timecard'.html_safe, new_timecard_path, class:"btn btn-default" %>
+  <%= link_to '<i class="fa fa-plus-circle"></i> Create New Timecard'.html_safe, new_timecard_path, remote: true, class:"btn btn-default" %>
   <%= link_to '<i class="fa fa-home"></i> Home'.html_safe, root_url, class: "btn btn-default" %>
   </div>
 
   <div class="row1">
-    <% @timecards.each do |timecard| %>
-      <p><strong><i class="fa fa-clock-o"></i> Timecard Date: </strong><%= link_to "#{timecard.start_date.strftime("%m/%d/%Y")} - #{timecard.end_date.strftime("%m/%d/%Y")}", timecard_path(timecard) %> </p> 
-    <% end %>
+    <%= render 'index' %>
   </div>
+
+  <div id="timecard-modal"></div>
 
 </div>
