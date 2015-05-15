@@ -1,5 +1,5 @@
-<%= render 'layouts/errors', object: @user %>
 <%= form_for @user, url_path: users_path do |f| %>
+  <%= render 'layouts/errors', object: @user %>
 
   <div class="form-group">
     <%= f.label :email, "Email", class: "col-sm-4 control-label" %>
