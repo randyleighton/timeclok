@@ -1,7 +1,7 @@
 
 <%= form_for(@timecard, remote: true, html: { class: 'form-horizontal' }) do |f| %>
 
-  <div class="modal-body">
+  <div>
   <ul class="errors"></ul>
     <%= render 'layouts/errors', object: @timecard %>
     <%= f.hidden_field :user_id, value: current_user.id %>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="modal-footer">
+  <div>
     <div class="form-group">
       <div class="offset3 col-sm-offset-3 col-sm-6">
         <%= render 'layouts/submit', form_type: "Timecard", object: @timecard, f: f %>
