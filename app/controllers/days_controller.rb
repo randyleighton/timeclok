@@ -22,7 +22,7 @@ class DaysController < ApplicationController
   end
 
   def update
-    if @day.update(day_params).valid?
+    if @day.update(day_params)
       redirect_to timecard_path(@timecard), notice: "Updated Successfully"
     else
       render 'edit', alert:"Failed to Update"

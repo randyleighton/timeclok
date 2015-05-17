@@ -14,7 +14,7 @@ class TimecardsController < ApplicationController
   def create
     @timecard = Timecard.create(timecard_params)
     if @timecard.valid?
-      redirect_to timecards_path
+      redirect_to timecard_path(@timecard)
     else
       render 'new'
     end
@@ -28,8 +28,7 @@ class TimecardsController < ApplicationController
   end
 
   def update
-    @timecard = @timecard.update(timecard_params)
-    if @timecard.valid?
+    if @timecard.update(timecard_params)
       redirect_to timecard_path(@timecard), notice:"Update Success."
     else
       render 'edit'

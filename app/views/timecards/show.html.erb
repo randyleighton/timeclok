@@ -7,7 +7,7 @@
 
   <div class="row1">
     <h4 class="row-head">Work Week</h4>
-    <p><strong><i class="fa fa-calendar"></i> Start Date: </strong><%= @timecard.start_date.strftime("%m/%d/%Y") %>
+    <p><%= link_to "<strong><i class='fa fa-calendar'></i> Start Date: </strong> #{@timecard.start_date.strftime('%m/%d/%Y')}".html_safe, edit_timecard_path(@timecard) %>
     &nbsp&nbsp
     <strong><i class="fa fa-calendar"></i> End Date: </strong><%= @timecard.end_date.strftime("%m/%d/%Y") %></p>
   </div>
