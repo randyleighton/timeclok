@@ -8,4 +8,6 @@ class Timecard < ActiveRecord::Base
   validates :start_date, presence: true
   validates :end_date, presence: true
 
+  scope :order_by_newest, ->{ order("start_date DESC") }
+  scope :order_by_oldest, ->{ order("start_date ASC") }
 end

@@ -4,7 +4,7 @@ class TimecardsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @timecards = Timecard.all.where(user_id:current_user.id)
+    @timecards = Timecard.all.where(user_id:current_user.id).order_by_newest
   end
 
   def new
