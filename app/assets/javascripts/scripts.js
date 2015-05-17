@@ -12,4 +12,8 @@ $(document).ready(function(){
     $('#view-workdays').slideToggle();
   });
 
+  $("#view-timecard-summary-btn").click(function() {
+    $("#view-timecard-summary").slideToggle();
+  });
+
 });
