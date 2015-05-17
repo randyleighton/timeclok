@@ -1,6 +1,7 @@
   factory :user do
-    username Faker::Internet.user_name
+    name Faker::Internet.user_name
     email Faker::Internet.email
+    phone "123-456-7890"
     password Faker::Internet.password
     password_confirmation { password }
   end
