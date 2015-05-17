@@ -8,28 +8,28 @@
   <div class="row1">
     <h3 class="row-head">Work Week</h3>
     <%= link_to "<strong><i class='fa fa-calendar'></i> Week of: </strong> #{@timecard.start_date.strftime('%m/%d/%Y')} - #{@timecard.end_date.strftime('%m/%d/%Y')}".html_safe, edit_timecard_path(@timecard) %>
+    <%= button_tag("Add a Workday <i id='add-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default",title:'Click if you want to to add workday details') %>
+    <%= button_tag("View Timecard Days <i id='view-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-workdays-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the days for this timecard') %>
+    <%= button_tag("View Timecard Summary <i id='view-timecard-summary-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-timecard-summary-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the timecard summary for the week') %>
   </div>
 
   <div class="row2">
-    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle'></i> Add a Workday".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default",title:'Click if you want to to add workday details') %>
+
     <div id="add-workday">
       <%= render 'days/form' %>
     </div>
   </div>
 
   <div class="row3">
-    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle'></i> View Timecard Days".html_safe, id:"view-workdays-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the days for this timecard') %>
     <div id="view-workdays">
       <%= render 'days_worked' %>
     </div>
   </div>  
 
   <div class="row4">
-    <%= button_tag("<i id='iconChange'class='fa fa-plus-circle'></i> View Timecard Summary".html_safe, id:"view-timecard-summary-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the timecard summary for the week') %>
     <div id="view-timecard-summary">
       <%= render 'week_worked' %>
     </div>
   </div>  
-
 
 </div>
