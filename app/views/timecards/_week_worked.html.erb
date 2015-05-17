@@ -1,33 +1,32 @@
 <div class="col-xs-12 col-sm-6">
   <h4 class="row-head">Week Summary</h4>
-  <% @timecard.days.each do |day| %>
-    <% if day.work_date != nil %>
+    <table class="table table-condensed table-bordered table-striped">
+      <thead>
+        <th colspan="4"><i class="fa fa-calendar"></i><strong> Work Week Summary: </strong></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Day: </strong></td>
+          <td><strong>Hours Worked: </strong></td>
+          <td><strong>Lunch: </strong></td>
+          <td><strong>Total: </strong></td>
+        </tr>
+        <% @total_week =0 %>
+        <% @timecard.days.each do |day| %>
+          <% if day.work_date != nil %>
+          <% @total_week = @total_week + day.total_hours - day.total_lunch %>
+            <tr>
+              <td><%= day.work_date.strftime("%m/%d/%Y") %></td>    
+              <td><%= day.total_hours %></td>
+              <td><%= day.total_lunch %> hrs</td>
+              <td><%= day.total_hours - day.total_lunch %> hrs</td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <th colspan="4"><strong><i class="fa fa-calculator fa-fw "></i>Total Hours Worked for Week: </strong><%= @total_week %> hrs</th>
+      </tfoot>
+    </table>
 
-      <table class="table table-condensed table-bordered table-striped">
-        <thead>
-          <th colspan="4"><i class="fa fa-calendar"></i><strong> Work Week Summary: </strong></th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Day: </strong></td>
-            <td><strong>Hours Worked: </strong></td>
-            <td><strong>Lunch: </strong></td>
-            <td><strong>Total: </strong></td>
-
-          </tr>
-          <tr>
-            <td><%= day.work_date.strftime("%m/%d/%Y") %></td>    
-            <td><%= day.total_hours %></td>
-            <td><%= day.total_lunch %> hrs</td>
-            <td><%= day.total_hours - day.total_lunch %> hrs</td>
-          </tr>
-
-        </tbody>
-        <tfoot>
-            <th colspan="3"><strong><i class="fa fa-calculator fa-fw "></i>Total Workweek </strong><%= day.total_day %> hrs</th>
-        </tfoot>
-      </table>
-
-    <% end %>
-  <% end %>
 </div>
