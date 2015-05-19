@@ -13,11 +13,6 @@ class TimecardsController < ApplicationController
 
   def create
     @timecard = Timecard.create(timecard_params)
-    if @timecard.valid?
-      redirect_to timecard_path(@timecard)
-    else
-      render 'new'
-    end
   end
 
   def show
@@ -28,11 +23,7 @@ class TimecardsController < ApplicationController
   end
 
   def update
-    if @timecard.update(timecard_params)
-      redirect_to timecard_path(@timecard), notice:"Update Success."
-    else
-      render 'edit'
-    end
+    @timecard.update(timecard_params)
   end
 
   def destroy

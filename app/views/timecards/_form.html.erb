@@ -1,9 +1,6 @@
 
 <%= form_for(@timecard, remote: true, html: { class: 'form-horizontal' }) do |f| %>
-
-  <div>
-  <ul class="errors"></ul>
-
+    <ul class="errors"></ul>
     <%= f.hidden_field :user_id, value: current_user.id %>
 
     <div class="form-group">
@@ -15,14 +12,14 @@
     <%= f.label :end_date, "End Date", class: "control-label" %>
     <%= f.date_field :end_date, class:"form-control" %>
     </div>
-  </div>
 
-  <div>
+
+
     <div class="form-group">
       <div class="offset3 col-sm-offset-3 col-sm-6">
         <%= render 'layouts/submit', form_type: "Timecard", object: @timecard, f: f %>
       </div>
     </div>
-  </div>
+
 
 <% end %>
