@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @timecard.errors.any? %>
+  <% @timecard.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#show-ajax").html("<%= escape_javascript(render 'show') %>")
+  $("#timecard-edit").toggle();
+<% end %>
