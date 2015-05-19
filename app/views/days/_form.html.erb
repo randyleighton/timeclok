@@ -1,5 +1,5 @@
-<%= render 'layouts/errors', object: @day %>
 <%= form_for(([@timecard, @day]), html: {class: 'form-horizontal' }) do |f| %>
+  <%= render 'layouts/errors', object: @day %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="form-group">
     <%= f.label :work_date, "Day Worked", class: "col-xs-12 col-sm-2"%>
