@@ -13,6 +13,7 @@ class TimecardsController < ApplicationController
 
   def create
     @timecard = Timecard.create(timecard_params)
+    @timecards = Timecard.all.where(user_id:current_user.id).order_by_newest
   end
 
   def show
