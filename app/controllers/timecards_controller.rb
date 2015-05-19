@@ -25,6 +25,7 @@ class TimecardsController < ApplicationController
 
   def update
     @timecard.update(timecard_params)
+    @day = @timecard.days.new
   end
 
   def destroy
