@@ -5,5 +5,5 @@ $("ul.errors").html("")
   <% end %>
 <% else %>
   $(".timecard-index").html("<%= escape_javascript(render 'index') %>")
-  $("#timecard-new").remove();
+  $("#timecard-new").toggle();
 <% end %>
