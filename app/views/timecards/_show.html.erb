@@ -1,6 +1,6 @@
 <div class="jumbotron jumbo">
   <h2 class="row-head">Timecard Detail</h2>
-  <%= link_to "<i class='fa fa-archive'></i> View All Timecards".html_safe, timecards_path, class: "btn btn-default" %>
+  <%= link_to "<i class='fa fa-archive'></i> View All Timecards".html_safe, timecards_path, class: "btn btn-default btn-lg" %>
 </div>
 
 <div class="row1">
@@ -8,9 +8,9 @@
   <p><i class='fa fa-calendar'></i> <%= link_to "#{@timecard.start_date.strftime('%m/%d/%Y')} - #{@timecard.end_date.strftime('%m/%d/%Y')}".html_safe, edit_timecard_path(@timecard), remote: true %></p>
   <div id="timecard-edit">
   </div>
-  <%= button_tag("Add a Workday <i id='add-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default",title:'Click if you want to to add workday details') %>
-  <%= button_tag("View Timecard Days <i id='view-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-workdays-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the days for this timecard') %>
-  <%= button_tag("View Timecard Summary <i id='view-timecard-summary-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-timecard-summary-btn",type:'button',class: "btn btn-default",title:'Click if you want to to view the timecard summary for the week') %>
+  <%= button_tag("Add a Workday <i id='add-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"add-workday-btn",type:'button',class: "btn btn-default btn-lg",title:'Click if you want to to add workday details') %>
+  <%= button_tag("View Timecard Days <i id='view-workday-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-workdays-btn",type:'button',class: "btn btn-default btn-lg",title:'Click if you want to to view the days for this timecard') %>
+  <%= button_tag("View Timecard Summary <i id='view-timecard-summary-icon-change' class='fa fa-chevron-down'></i>".html_safe, id:"view-timecard-summary-btn",type:'button',class: "btn btn-default btn-lg",title:'Click if you want to to view the timecard summary for the week') %>
 </div>
 
 <div class="row2">
