@@ -1,0 +1,2 @@
+$("#show-ajax").html("<%= escape_javascript(render 'show') %>")
+
