@@ -6,17 +6,17 @@ $(document).ready(function(){
 
   $('#add-workday-btn').click(function(){
     $('#add-workday-icon-change').next().toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-    $('#add-workday').next().toggle();
+    $('#add-workday').next().slideToggle();
   }); 
 
   $("#view-workdays-btn").click(function() {
     $('#view-workday-icon-change').next().toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-    $('#view-workdays').next().toggle();
+    $('#view-workdays').next().slideToggle();
   });
 
   $("#view-timecard-summary-btn").click(function() {
     $('#view-timecard-summary-icon-change').next().toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-    $("#view-timecard-summary").next().toggle();
+    $("#view-timecard-summary").next().slideToggle();
   });
 
 });
