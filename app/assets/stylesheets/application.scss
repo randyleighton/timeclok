@@ -10,18 +10,53 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
  *= require font-awesome
  *= require_self
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "sass_vars.scss";
-@import "custom.css";
-@import "home.css";
-@import "users.css";
-@import "timecard.css";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
+
+/*--------------------
+SASS Color Variables
+--------------------*/
+$boot_blue: #428bca;
+$boot_tan: #f8f8f8;
+$cardinal: #B71F3B;
+$mercury: #e5e5e5;
+$silk: #e3e3e3;
+$button-pri: #c1c9d4;
+$button-sec: #b5bdc8;
+$tan-bg: #f4f3f1;
+$atlantis: #8ed022;
+
+/*--------------------
+SASS MIXINS
+--------------------*/
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin shadowed-corners($color) {
+  -webkit-box-shadow: 3px 3px 3px $color;
+     -moz-box-shadow: 3px 3px 3px $color;
+          box-shadow: 3px 3px 3px $color;
+}
+@mixin list-bullets($content) {
+  margin: 1em;
+  // margin-left: 1em;
+  &:before {
+  content: $content;
+  font-family: 'FontAwesome';
+  float: left;
+  margin-left: -1.5em;
+  color: $button-sec;
+  }
+}
+
 
 .jumbotron {
   background-color: $boot_blue !important;
@@ -33,3 +68,114 @@
 .fa {
   color: $boot_blue;
 }
+
+/*user*/
+.username-style {
+  color: $boot_blue;
+}
+#view-password-fields {
+  display: none;
+}
+
+/*timecard*/
+.row1, .row2, .row3 { 
+  margin: 25px 0px 25px 0px !important;
+}
+.row-head { color: #428bca }
+
+#add-workday, #view-workdays, #view-timecard-summary { display: none }
+
+/*home*/
+.home-time {
+  float:right;
+  width: 100px;
+}
+.edit-user {
+  color: #fff;
+  text-shadow: 1px 1px 1px #000000;
+  text-decoration: none;
+}
+
+
+
+
+/* custom */
+/*----------------------------- 
+global css entire program
+-----------------------------*/
+
+body {
+  padding-top: 55px;
+  padding-bottom: 70px;
+}
+
+a {
+  color: $cardinal;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  body { padding-top: 5px; }
+  .offset3 { padding: 0 15px; }
+  .home-p { font-size: 1.3em; }
+}
+
+/* The most used buttons bootstrap style */
+.btn-default {
+  margin-bottom: 10px !important;
+  color: $cardinal;
+  background-color: $button-pri;
+  border-color: black;
+  &:hover {
+    background-color: $cardinal !important;
+    color: white;
+  }
+}
+
+.float-btn {
+  color: $cardinal;
+  float: left;
+  margin: 0 .6em 0 0;
+}
+a.float-btn {
+  color: $cardinal;
+  margin-top: 0px;
+}
+
+/* This is to remove the offset padding */
+.offset3, .checkbox {
+  padding: 0px !important;
+}
+
+
+/* ------------------
+This is for forms
+--------------------*/
+.border-form-div {
+  max-width: 540px;
+  padding: .4em .6em;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid $mercury;
+  @include rounded-corners(.4em);
+  @include shadowed-corners(rgba(0,0,0,.10));
+  h2,h4 {
+    color: $cardinal;
+    margin-left: 10px;
+  }
+  p {
+    color: $cardinal;
+  }
+  a {
+    color: $cardinal;
+    margin: 3px;
+  }
+}
+
+.r1-header h3 {
+    margin-top: 0px !important;
+  }
