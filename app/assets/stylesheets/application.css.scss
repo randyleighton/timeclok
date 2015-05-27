@@ -10,10 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require font-awesome
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
@@ -81,7 +81,9 @@ SASS MIXINS
 .row1, .row2, .row3 { 
   margin: 25px 0px 25px 0px !important;
 }
-.row-head { color: #428bca }
+.row-head { 
+  color: #428bca;
+}
 
 #add-workday, #view-workdays, #view-timecard-summary { display: none }
 
