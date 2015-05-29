@@ -10,12 +10,7 @@ class DaysController < ApplicationController
 
   def create
     @day = @timecard.days.create(day_params)
-    if @day.valid?
-      redirect_to timecard_path(@timecard), notice: "Created Successfully"
-    else
-      @day.work_date = nil
-      render timecard_path(@timecard), notice: "Failed to Create"
-    end
+    b
   end
 
   def edit
