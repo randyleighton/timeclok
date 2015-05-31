@@ -2,4 +2,9 @@
   <i class="fa fa-plus-circle fa-fw"></i>
   <%= f.object.new_record? ? "Create " + form_type : "Update " + form_type %>
 <% end %>
-<%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, root_path, class: "btn btn-default btn-lg float-btn",title:"Cancel" %>
+
+<% if @day %>
+  <%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, timecard_path(@timecard), class: "btn btn-default btn-lg float-btn",title:"Cancel" %>  
+<% else %>
+  <%= link_to "<i class='fa fa-arrow-circle-left fa-fw'></i> Cancel".html_safe, root_path, class: "btn btn-default btn-lg float-btn",title:"Cancel" %>
+<% end %>
