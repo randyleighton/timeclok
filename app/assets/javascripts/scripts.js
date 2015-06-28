@@ -6,7 +6,7 @@ $(document).ready(function(){
 
   $('#add-workday-btn').click(function(){
     $('#add-workday-icon-change').toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
-    $('#add-workday').next().slideToggle();
+    $('#add-workday').slideToggle();
   }); 
 
   $("#view-workdays-btn").click(function() {

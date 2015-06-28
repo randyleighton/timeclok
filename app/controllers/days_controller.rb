@@ -10,7 +10,6 @@ class DaysController < ApplicationController
 
   def create
     @day = @timecard.days.create(day_params)
-    b
   end
 
   def edit
